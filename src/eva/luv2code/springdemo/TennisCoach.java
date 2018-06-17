@@ -1,12 +1,14 @@
 package eva.luv2code.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class TennisCoach implements Coach {
 
-
+	@Autowired
+	@Qualifier("randomFortuneService")
 	private FortuneService fortuneService;
 	
 	
@@ -21,13 +23,13 @@ public class TennisCoach implements Coach {
 		fortuneService = theFortuneService;
 	}
 	*/
-	
+	/*
 	@Autowired
 	public void setFortuneService(FortuneService fortuneService) {
 		System.out.println(">>Inside setFortuneService() method in TennisCoach");
 		this.fortuneService = fortuneService;
 	}
-	
+	*/
 	@Override
 	public String getDailyWorkOut() {
 		System.out.println(">>Inside getDailyWorkout method in TennisCoach");
