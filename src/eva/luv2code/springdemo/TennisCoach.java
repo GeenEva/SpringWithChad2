@@ -7,8 +7,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class TennisCoach implements Coach {
 
-	@Autowired
-	@Qualifier("HAPPYFortuneService")
 	private FortuneService fortuneService;
 	
 	
@@ -16,13 +14,13 @@ public class TennisCoach implements Coach {
 		System.out.println(">>Inside default constructor TennisCoach");
 	}
 	
-	/*
-	@Autowired //Spring will scan for a component that implements the FortuneService interface
-	public TennisCoach(FortuneService theFortuneService) {
-		System.out.println("inside tenniscoach constructor");
+	
+	@Autowired 
+	public TennisCoach(@Qualifier("randomFortuneService") FortuneService theFortuneService) {
+		System.out.println(">>Inside tenniscoach constructor");
 		fortuneService = theFortuneService;
 	}
-	*/
+	
 	/*
 	@Autowired
 	public void setFortuneService(FortuneService fortuneService) {
