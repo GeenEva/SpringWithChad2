@@ -2,15 +2,28 @@ package eva.luv2code.springdemo;
 
 import java.util.Random;
 
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class RandomFortuneService implements FortuneService {
-
-	private String[] fortuneArray = { "Hollar hollar",	
-										"The cosmos loves you",
-										"The stars are alined for you"
-									};
+	
+	
+	private String[] fortuneArray;
+	
+	/*Video 76 has some explanation about post constructing*/
+	@PostConstruct
+	public void setUpArray() {
+		fortuneArray = new String[5]; {
+			fortuneArray[0] = "fortuneString1";
+			fortuneArray[1] = "fortuneString2";
+			fortuneArray[2] = "fortuneString3";
+			fortuneArray[3] = "fortuneString4";
+			fortuneArray[4] = "fortuneString5";
+		}
+	}
 	
 	private Random myRandom = new Random();
 	
