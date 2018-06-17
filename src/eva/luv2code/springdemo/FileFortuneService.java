@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -17,6 +19,7 @@ public class FileFortuneService implements FortuneService {
 	private List<String> theFortunes;
 	private Random myRandom = new Random();
 	
+	//Constructor initializes the theFortunes field 
 	public FileFortuneService() {
 		
 		File theFile = new File(fileName);
@@ -37,6 +40,16 @@ public class FileFortuneService implements FortuneService {
 		}catch(IOException e) {
 			e.printStackTrace();
 		}
+		
+	}
+	
+	@PostConstruct
+	public void doCoolStuff() {
+		System.out.println(">>Inside doCoolStuff(): Being very cool indeed...");
+		for (int i = 0; i < theFortunes.size() ; i++) {
+			System.out.println(theFortunes.get(i));
+		}
+		
 		
 	}
 	
