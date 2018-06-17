@@ -10,11 +10,11 @@ public class AnnotationDemoApp {
 		//If you misspel the bean (for example TennisCoach instead of tennisCoach), then first the beans are constructed
 		//anyway. After that you get a NoSuchBeanDefenitionException.
 		
-		SwimCoach theCoach = context.getBean("swimCoach", SwimCoach.class);
+		Coach theCoach = context.getBean("pingPongCoach", PingPongCoach.class);
 		
-		System.out.println(theCoach.getDailyWorkOut());
+//		System.out.println(theCoach.getDailyWorkOut());
 		System.out.println(theCoach.getDailyFortune());
-		System.out.println(theCoach.getEmail() + "  " + theCoach.getTeam());
+	
 		
 		context.close();
 		

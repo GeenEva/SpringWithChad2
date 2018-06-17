@@ -13,17 +13,6 @@ public class RandomFortuneService implements FortuneService {
 	
 	private String[] fortuneArray;
 	
-	/*Video 76 has some explanation about post constructing*/
-	@PostConstruct
-	public void setUpArray() {
-		fortuneArray = new String[5]; {
-			fortuneArray[0] = "fortuneString1";
-			fortuneArray[1] = "fortuneString2";
-			fortuneArray[2] = "fortuneString3";
-			fortuneArray[3] = "fortuneString4";
-			fortuneArray[4] = "fortuneString5";
-		}
-	}
 	
 	private Random myRandom = new Random();
 	
