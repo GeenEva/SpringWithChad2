@@ -2,7 +2,7 @@ package eva.luv2code.springdemo;
 
 import org.springframework.stereotype.Component;
 
-//@Component
+@Component
 public class JobCoach implements Coach {
 
 	public JobCoach() {

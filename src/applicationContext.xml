@@ -9,6 +9,7 @@
 
 	<!-- Add entry to enable component scanning -->
 	<context:component-scan base-package="eva.luv2code.springdemo"/>
+	<context:property-placeholder location="classpath:sport.properties"/>
    
     <!-- Define your beans here -->
     
