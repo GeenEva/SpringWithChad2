@@ -11,10 +11,22 @@ import org.springframework.stereotype.Component;
 public class RandomFortuneService implements FortuneService {
 	
 	
-	private String[] fortuneArray;
-	
+	private String[] fortuneArray ;
 	
 	private Random myRandom = new Random();
+	
+	
+	@PostConstruct
+	 	public void setUpArray() {
+	 		fortuneArray = new String[5]; {
+	 			fortuneArray[0] = "fortuneString1";
+	 			fortuneArray[1] = "fortuneString2";
+	 			fortuneArray[2] = "fortuneString3";
+	 			fortuneArray[3] = "fortuneString4";
+	 			fortuneArray[4] = "fortuneString5";
+	 		}
+	 	}
+	
 	
 	@Override
 	public String getFortune() {
