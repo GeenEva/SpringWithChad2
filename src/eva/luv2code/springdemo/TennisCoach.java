@@ -5,8 +5,11 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
+
 public class TennisCoach implements Coach {
 
+	@Autowired
+	@Qualifier("fileFortuneService")
 	private FortuneService fortuneService;
 	
 	
@@ -15,8 +18,8 @@ public class TennisCoach implements Coach {
 	}
 	
 	
-	@Autowired 
-	public TennisCoach(@Qualifier("randomFortuneService") FortuneService theFortuneService) {
+	
+	public TennisCoach( FortuneService theFortuneService) {
 		System.out.println(">>Inside tenniscoach constructor");
 		fortuneService = theFortuneService;
 	}
