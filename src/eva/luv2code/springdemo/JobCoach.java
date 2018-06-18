@@ -4,21 +4,25 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class JobCoach implements Coach {
-
-	public JobCoach() {
-		System.out.println(">>Inside default constructor jobCoach");
+	
+	private FortuneService fortuneService;
+	
+	public JobCoach(FortuneService fortuneService) {
+		System.out.println(">>Inside JobCoach constructor with fortune dependency");
+		this.fortuneService = fortuneService;
 	}
+
 	
 	@Override
 	public String getDailyWorkOut() {
 		System.out.println(">>Inside getDailyWorkOut");
-		return "ReurnValue: Get a job";
+		return "ReturnValue: Get a job";
 	}
 
 	@Override
 	public String getDailyFortune() {
-		// TODO Auto-generated method stub
-		return null;
+		System.out.println(">>Inside getDailyFortune");
+		return "Return tha fortune: " + fortuneService.getFortune();
 	}
 
 }
