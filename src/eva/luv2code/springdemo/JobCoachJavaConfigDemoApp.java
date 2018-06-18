@@ -10,11 +10,13 @@ public class JobCoachJavaConfigDemoApp {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SportConfig.class);
 		
 		
-		Coach theCoach = context.getBean("jobCoach", JobCoach.class);
+		JobCoach theCoach = context.getBean("jobCoach", JobCoach.class);
 		
 		System.out.println(theCoach.getDailyWorkOut());
 		System.out.println(theCoach.getDailyFortune());
 	
+		System.out.println("email: " + theCoach.getEmail());
+		System.out.println("email: " + theCoach.getTeam());
 		
 		context.close();
 		

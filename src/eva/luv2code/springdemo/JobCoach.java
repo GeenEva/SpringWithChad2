@@ -1,9 +1,15 @@
 package eva.luv2code.springdemo;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class JobCoach implements Coach {
+	
+	@Value("${foo.email}")
+	private String email;
+	@Value("${foo.team}")
+	private String team;
 	
 	private FortuneService fortuneService;
 	
@@ -12,7 +18,8 @@ public class JobCoach implements Coach {
 		this.fortuneService = fortuneService;
 	}
 
-	
+
+
 	@Override
 	public String getDailyWorkOut() {
 		System.out.println(">>Inside getDailyWorkOut");
@@ -25,4 +32,14 @@ public class JobCoach implements Coach {
 		return "Return tha fortune: " + fortuneService.getFortune();
 	}
 
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public String getTeam() {
+		return team;
+	}
+	
 }
